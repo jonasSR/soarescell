@@ -1,0 +1,567 @@
+:root {
+    --dark: #000000;
+    --card-bg: #1a1a1a;
+    --cyan: #00e5ff;
+    --magenta: #d500f9;
+    --text: #ffffff;
+    --gray: #b3b3b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--magenta);
+}
+
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    /* Substituí pelo link direto da imagem e adicionei as propriedades de ajuste */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('http://www.intensivacursos.com.br/wp-content/uploads/curso-conserto-manutencao-celulares-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Para o texto aparecer sobre o fundo escuro */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Botões */
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    margin: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--cyan), var(--magenta));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.btn-secondary {
+    border: 1px solid var(--gray);
+    color: white;
+}
+
+/* Cards de Serviço */
+.services { padding: 10px 0; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--cyan);
+}
+
+/* Vitrine */
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-img {
+    height: 150px;
+    background: #333;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.price {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--cyan);
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.btn-buy {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #25d366; /* Verde oficial do WhatsApp */
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-radius: 50px; /* Bordas arredondadas estilo pílula */
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    margin-top: 15px;
+}
+
+.btn-buy:hover {
+    background-color: #1ebe57; /* Um verde um pouco mais escuro ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de flutuar levemente */
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.btn-buy:active {
+    transform: translateY(-1px);
+}
+
+/* Floating WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+/* Container que agrupa imagem e texto */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espaço entre a imagem e o texto */
+}
+
+/* Ajuste da Imagem */
+.logo-img {
+    height: 50px; /* Ajuste a altura conforme preferir */
+    width: auto;
+    border-radius: 50%; /* Mantém o formato circular se a imagem for quadrada */
+    border: 2px solid var(--cyan); /* Um detalhe em neon envolta da logo */
+}
+
+/* Ajuste do Texto */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-transform: uppercase;
+}
+
+.logo-text span {
+    color: var(--cyan);
+}
+
+/* Responsividade: Ajustes para a Logo no celular */
+@media (max-width: 480px) {
+    /* Seleciona o container que envolve a imagem e o texto */
+    .logo { 
+        display: flex;
+        align-items: center;
+        gap: 5px;           /* Diminui o espaço entre a imagem e o texto (ajuste conforme necessário) */
+    }
+
+    .logo-img {
+        height: 35px;       /* Reduzi um pouco mais para equilibrar com o texto */
+        margin-right: 0;    /* Remove margens laterais que possam estar sobrando */
+    }
+
+    .logo-text {
+        font-size: 1.1rem;  /* Ajuste leve no tamanho */
+        margin-left: 0;     /* Remove espaços extras à esquerda */
+        letter-spacing: -0.5px; /* Opcional: aproxima um pouco as letras do texto */
+        line-height: 1;     /* Remove espaços verticais sobrando */
+    }
+}
+
+.footer {
+    background-color: #1a1a1a; /* Tom escuro elegante */
+    color: #ffffff;
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-info h3, .footer-social h4 {
+    color: #00d2ff; /* Cor de destaque (ajuste se necessário) */
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-info i {
+    margin-right: 8px;
+    color: #00d2ff;
+}
+
+.instagram-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s;
+}
+
+.instagram-link:hover {
+    color: #e1306c; /* Cor clássica do Instagram no hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    /* Centraliza o conteúdo principal do rodapé */
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Centraliza horizontalmente no flex-column */
+        justify-content: center;
+        text-align: center;
+        gap: 20px;              /* Adiciona um espaço entre os itens empilhados */
+    }
+
+    /* Centraliza o link do Instagram e ícones */
+    .instagram-link, 
+    .social-links, 
+    .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;            /* Garante que ocupe a largura total para alinhar ao centro */
+        margin: 0 auto;
+    }
+
+    /* Caso tenha listas (ul) no rodapé, remove as bolinhas e centraliza */
+    .footer-content ul {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    /* Ajuste para o título e textos */
+    .footer-content h3, 
+    .footer-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    background: transparent;
+    color: #007bff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Faz o produto aparecer com um efeito de fade */
+.product-card {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Garante que o grid não quebre quando itens forem escondidos */
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-img img {
+    width: 100%;       /* Faz a imagem ocupar a largura do card */
+    height: 200px;     /* Define uma altura padrão */
+    object-fit: contain; /* Garante que a imagem não seja cortada nem esticada */
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.product-description {
+    font-size: 0.9rem;      /* Texto um pouco menor que o padrão */
+    color: #666;            /* Cor cinza para dar menos destaque que o título */
+    margin: 10px 0;         /* Espaçamento acima e abaixo */
+    line-height: 1.4;       /* Melhora o espaçamento entre as linhas */
+    
+    /* Opcional: limita a descrição a 2 linhas e coloca "..." se passar disso */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    /* Centraliza o conteúdo principal do rodapé */
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Centraliza horizontalmente no flex-column */
+        justify-content: center;
+        text-align: center;
+        gap: 20px;              /* Adiciona um espaço entre os itens empilhados */
+    }
+
+    /* Centraliza o link do Instagram e ícones */
+    .instagram-link, 
+    .social-links, 
+    .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;            /* Garante que ocupe a largura total para alinhar ao centro */
+        margin: 0 auto;
+    }
+
+    /* Caso tenha listas (ul) no rodapé, remove as bolinhas e centraliza */
+    .footer-content ul {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    /* Ajuste para o título e textos */
+    .footer-content h3, 
+    .footer-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Ajustes específicos para o botão flutuante no Celular */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;           /* Tamanho fixo para virar um círculo */
+        height: 50px;          /* Altura igual à largura */
+        bottom: 20px;          /* Distância da borda inferior */
+        right: 20px;           /* Distância da borda direita */
+        padding: 0;            /* Remove paddings que deformam o círculo */
+        
+        display: flex;         /* Usa flex para centralizar o ícone dentro */
+        align-items: center;
+        justify-content: center;
+        
+        border-radius: 50%;    /* Garante que seja perfeitamente redondo */
+        font-size: 24px;       /* Tamanho do ícone de WhatsApp */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+        z-index: 1000;         /* Garante que fique acima de tudo */
+    }
+
+    /* Esconde qualquer texto que esteja dentro do botão, deixando só o ícone */
+    .whatsapp-float span {
+        display: none;
+    }
+
+    .whatsapp-float i {
+        margin: 0;             /* Remove margens do ícone */
+        font-size: 28px;       /* Ajusta o tamanho do ícone */
+    }
+}
+
+/* Ajustes para Celular (Mobile) */
+@media (max-width: 768px) {
+    /* Diminui o respiro geral da seção */
+    .hero {
+        padding: 40px 0; /* Ajuste para cima e para baixo */
+        min-height: auto; /* Garante que não force uma altura de tela cheia */
+    }
+
+    /* Reduz o espaçamento do título principal */
+    .hero-content h1 {
+        font-size: 2.2rem;   /* Tamanho da fonte menor */
+        margin-bottom: 10px; /* Reduz a distância para o parágrafo */
+        line-height: 1.1;    /* Aproxima as linhas do título */
+    }
+
+    /* Ajusta o parágrafo */
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px; /* Reduz a distância para os botões */
+        padding: 0 10px;    /* Evita que o texto encoste nas bordas */
+    }
+
+    /* Aproxima os botões um do outro */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column; /* Empilha os botões */
+        gap: 12px;             /* Espaço entre um botão e outro */
+        align-items: center;
+    }
+
+    /* Garante que os botões não fiquem gigantes mas sim proporcionais */
+    .cta-buttons .btn {
+        width: 80%;           /* Ocupa quase toda a largura */
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+.separator-fade {
+    width: 100%;             /* Vai de fora a fora */
+    height: 1px;             /* Linha bem fininha */
+    margin: 40px 0;          /* Espaço entre as seções */
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(255, 217, 0, 0.1) 50%, 
+        transparent
+    );
+}
+
+/* Ajustes apenas para dispositivos móveis */
+@media (max-width: 768px) {
+    .footer-bottom {
+        padding-top: 10px;    /* Reduz o espaço acima do texto */
+        padding-bottom: 10px; /* Reduz o espaço abaixo do texto */
+        margin-top: 0;        /* Remove margens externas que empurram para baixo */
+    }
+
+    .footer-bottom p {
+        margin: 0;            /* Remove as margens padrão do parágrafo */
+        font-size: 12px;      /* Deixa a fonte levemente menor para caber melhor */
+        line-height: 1.2;     /* Diminui a altura da linha */
+    }
+}
