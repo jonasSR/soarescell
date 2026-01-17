@@ -68,13 +68,25 @@ nav {
 .hero {
     padding: 100px 0;
     text-align: center;
-    /* Substituí pelo link direto da imagem e adicionei as propriedades de ajuste */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('http://www.intensivacursos.com.br/wp-content/uploads/curso-conserto-manutencao-celulares-1.png');
+    /* Sobreposição preta: vai do preto mais forte para um levemente mais suave */
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.5)
+    ), 
+    url('http://www.intensivacursos.com.br/wp-content/uploads/curso-conserto-manutencao-celulares-1.png');
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white; /* Para o texto aparecer sobre o fundo escuro */
+    color: white;
+}
+
+/* Ajuste opcional para o celular não ficar com a imagem "esticada" */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+        background-attachment: scroll; /* Melhor desempenho em celulares */
+    }
 }
 
 .hero h1 {
